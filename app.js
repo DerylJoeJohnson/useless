@@ -7,9 +7,7 @@ const path=require('path');
 var bookrouter=require("./routes/bookrouter")
 var authrouter=require("./routes/authrouter")
 //var emprouter=require("./routes/emp")
-app.listen(process.env.PORT || 3000,function(){
-    console.log("Server thudangi makkale....")
-});
+
 app.get('/',function(req,res){
     //res.sendFile(__dirname+"/src/views/index.html")
     res.render('index',{pageTitle:"Library",nav:[{link:"/book",title:"Books"},{link:"/author",title:"AUTHOR"}]});
@@ -38,4 +36,7 @@ app.set("view engine","ejs");
 app.set("views","./src/views")
 app.use("/book",bookrouter);
 app.use("/author",authrouter);
+app.listen(process.env.PORT || 3000,function(){
+  console.log("Server thudangi makkale....")
+});
 //app.use("/emp",emprouter);
