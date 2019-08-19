@@ -7,7 +7,7 @@ const path=require('path');
 var bookrouter=require("./routes/bookrouter")
 var authrouter=require("./routes/authrouter")
 //var emprouter=require("./routes/emp")
-app.listen(3000,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("Server thudangi makkale....")
 });
 app.get('/',function(req,res){
